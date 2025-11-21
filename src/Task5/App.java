@@ -9,6 +9,7 @@ public class App {
         int cntSpL = s / 2;
         int n = 0;
         int diff = -1;
+
         for (int i = 0; i < s / 2; i++) {
             for (int j = 0; j < s; j++) {
                 if (i == 0 && j != s / 2) {
@@ -42,7 +43,6 @@ public class App {
                         System.out.print(n);
                         n++;
                     }
-
                 } else {
                     System.out.print(" ");
                 }
@@ -50,6 +50,7 @@ public class App {
             cntSpL--;
             System.out.println();
         }
+
         for (int i = 0; i < s; i++) {
             if (n > 9) {
                 n = 0;
@@ -58,16 +59,11 @@ public class App {
             n++;
         }
         System.out.println();
+
         cntSpL = 1;
         for (int i = 0; i < s / 2; i++) {
             for (int j = 0; j < s; j++) {
-                if (i == s / 2 - 1 && j != s / 2) {
-                    System.out.print(" ");
-                } else if (i == s / 2 - 1 && j == s / 2) {
-                    System.out.print(n);
-                    n++;
-                }
-                else if (j < cntSpL) {
+                if (j < cntSpL) {
                     System.out.print(" ");
                 } else if (j == cntSpL) {
                     if (n > 9) {
@@ -92,7 +88,6 @@ public class App {
                         System.out.print(n);
                         n++;
                     }
-
                 } else {
                     System.out.print(" ");
                 }
