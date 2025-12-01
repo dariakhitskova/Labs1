@@ -1,18 +1,18 @@
-package Task8;
+package Task10;
 
-public class App {
+import java.util.List;
+
+public class ConsoleApp {
     public static void main(String[] args) {
         InputArgs args1 = parseCmdArgs(args);
         if (args1 == null) {
             System.out.println("Аргументы переданы неправильно");
             return;
         }
-        int[][] arr = FileUtils.readMatrix(args1.input);
-        printMatrix(arr);
-        System.out.println();
-        Solver.solve(arr);
-        printMatrix(arr);
-        FileUtils.writeToFile(arr, args1.output);
+        List<Flat> flats = FileUtils.readFromFile(args1.input);
+        for (Flat f : flats) {
+            System.out.println(f);
+        }
     }
     static InputArgs parseCmdArgs(String[] args) {
         if (args.length == 4 || args.length == 2) {
@@ -42,13 +42,5 @@ public class App {
             return null;
         }
         return null;
-    }
-    static void printMatrix(int[][] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[0].length; j++) {
-                System.out.print(arr[i][j] + "\t");
-            }
-            System.out.println();
-        }
     }
 }
