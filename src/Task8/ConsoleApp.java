@@ -1,6 +1,6 @@
 package Task8;
 
-public class App {
+public class ConsoleApp {
     public static void main(String[] args) {
         InputArgs args1 = parseCmdArgs(args);
         if (args1 == null) {
