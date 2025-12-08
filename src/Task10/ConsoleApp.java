@@ -1,6 +1,7 @@
 package Task10;
 
 import java.util.List;
+import java.util.Map;
 
 public class ConsoleApp {
     public static void main(String[] args) {
@@ -10,9 +11,8 @@ public class ConsoleApp {
             return;
         }
         List<Flat> flats = FileUtils.readFromFile(args1.input);
-        for (Flat f : flats) {
-            System.out.println(f);
-        }
+        Map<String, DistrictRooms> map = Solver.solve(flats);
+        FileUtils.writeToFile(map, args1.output);
     }
     static InputArgs parseCmdArgs(String[] args) {
         if (args.length == 4 || args.length == 2) {
