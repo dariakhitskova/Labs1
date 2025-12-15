@@ -2,6 +2,7 @@ package Task8;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public class GUIApp extends JFrame {
     JLabel welcome;
@@ -30,9 +31,25 @@ public class GUIApp extends JFrame {
         setLayout(new BorderLayout());
         add(welcome, BorderLayout.NORTH);
         add(buttonPanel, BorderLayout.SOUTH);
+
+        read.addActionListener(this::readListener);
+        write.addActionListener(this::writeListener);
+        solve.addActionListener(this::solveListener);
     }
     public static void main(String[] args) {
         GUIApp app = new GUIApp();
         app.setVisible(true);
+    }
+
+    public void solveListener(ActionEvent e) {
+
+    }
+
+    public void readListener(ActionEvent e) {
+
+    }
+
+    public void writeListener(ActionEvent e) {
+
     }
 }
